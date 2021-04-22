@@ -83,6 +83,11 @@ Podlar arasındaki iletişimi sağlayan aynı zamanda podların dışarıdan eri
 "selector" kısmında tanımlayacağımız label ile bu label bilgilerine sahip podları eşleyerek. Üzerine gelen istekleri ilgili podlara dağıtır. 
 
 Örnek:
+
+```shell
+kubectl apply svc.yaml
+```
+
 ```yaml
 apiVersion: v1                             
 kind: Service
@@ -99,10 +104,20 @@ spec:
     targetPort: 80                           
 ```
 
+Service listeleme:
+
+```shell
+kubectl get svc
+```
 ## Deployment
 Deployment replica setleri yönettiğimiz bir kubernetes objesidir. Birden fazla replica seti tanımlayabildiğimiz için bize rolling update imkanı sunar. Örnek verecek olursak 5 tane eski versiyon (v1) podumuzun yerine v2 versiyonları deploy edeceğimiz zaman tüm podları öldürerek downtime yaratmamış olur. Bunun yerine aşamalı olarak öldürdüğü pod kadar v2 versiyon deploy ederek downtime 'ın önüne geçer.
 
 Örnek bir deployment:
+
+```shell
+kubectl apply deploy.yaml
+```
+
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -125,4 +140,10 @@ spec:
         image: nginx:1.14.2
         ports:
         - containerPort: 80
+```
+
+Deployment listeleme:
+
+```shell
+kubectl get deploy
 ```
