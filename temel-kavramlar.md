@@ -83,7 +83,7 @@ Podlar arasındaki iletişimi sağlayan aynı zamanda podların dışarıdan eri
 "selector" kısmında tanımlayacağımız label ile bu label bilgilerine sahip podları eşleyerek. Üzerine gelen istekleri ilgili podlara dağıtır. 
 
 Örnek:
-```
+```yaml
 apiVersion: v1                             
 kind: Service
 metadata:
@@ -103,7 +103,7 @@ spec:
 Deployment replica setleri yönettiğimiz bir kubernetes objesidir. Birden fazla replica seti tanımlayabildiğimiz için bize rolling update imkanı sunar. Örnek verecek olursak 5 tane eski versiyon (v1) podumuzun yerine v2 versiyonları deploy edeceğimiz zaman tüm podları öldürerek downtime yaratmamış olur. Bunun yerine aşamalı olarak öldürdüğü pod kadar v2 versiyon deploy ederek downtime 'ın önüne geçer.
 
 Örnek bir deployment:
-```
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
